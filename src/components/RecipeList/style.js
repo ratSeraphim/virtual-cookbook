@@ -10,9 +10,10 @@ export const RecipeList = styled.div`
 export const Recipe = styled.div`
   padding: 15px 20px;
   background-color: #fff;
-  box-shadow: 2px 2px 3px #555;
+  box-shadow: 2px 2px 2px #bbb;
+  border-radius: 2px;
   &:hover {
-    transform: rotate(5deg);
+    transform: rotate(2deg);
   }
 `;
 
@@ -38,5 +39,6 @@ export const Button = styled.a`
   &:hover {
     background-color: #555;
     color: #fff;
+    cursor: pointer;
   }
 `;

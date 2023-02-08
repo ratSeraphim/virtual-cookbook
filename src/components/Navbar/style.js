@@ -17,6 +17,11 @@ export const Link = styled.a`
   border: solid 1px #fff;
   padding: 4px;
   border-radius: 2px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(25, 25, 25, 0.3);
+  }
 `;
 
 export const Search = styled.input`
@@ -24,4 +29,5 @@ export const Search = styled.input`
   margin: 0 20px;
   padding: 5px;
   border-radius: 2px;
+  color: #555;
 `;
