@@ -1,8 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 
 export const RecipeContext = createContext();
 
+const recipeReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_LIST":
+      return { ...state, list: action.payload };
+    default:
+      return state;
+  }
+};
+
 const RecipeContextProvider = (props) => {
+  const [state, dispatch] = useReducer(recipeReducer, { list: [] });
+
+  const setList = (listData) => {
+    dispatch({ type: "SET_LIST", payload: listData });
+  };
+
   const [selectedRecipes, setSelectedRecipes] = useState([
     {
       title: "Greek Salad",
@@ -25,13 +40,9 @@ const RecipeContextProvider = (props) => {
       { title: title, steps: steps, id: crypto.randomUUID() },
     ]);
   };
-  const removeRecipe = (id) => {
-    setSelectedRecipes(selectedRecipes.filter((recipe) => recipe.id !== id));
-  };
+
   return (
-    <RecipeContext.Provider
-      value={{ selectedRecipes, addRecipe, removeRecipe }}
-    >
+    <RecipeContext.Provider value={{ selectedRecipes, addRecipe }}>
       {props.children}
     </RecipeContext.Provider>
   );
