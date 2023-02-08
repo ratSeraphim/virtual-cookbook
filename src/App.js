@@ -3,12 +3,12 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Create from "./components/Create/Create";
-import { RecipeProvider } from "./RecipeContext";
+import RecipeContextProvider from "./RecipeContext";
 
 function App() {
   return (
     <div className="App">
-      <RecipeProvider>
+      <RecipeContextProvider>
         <Navbar />
         <div className="content">
           <BrowserRouter>
@@ -18,7 +18,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </div>
-      </RecipeProvider>
+      </RecipeContextProvider>
     </div>
   );
 }
