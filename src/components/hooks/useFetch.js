@@ -4,10 +4,8 @@ const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-  console.log("fetch function called");
 
   useEffect(() => {
-    console.log("in useEffect");
     const abortCont = new AbortController();
 
     setTimeout(() => {

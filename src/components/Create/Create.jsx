@@ -7,11 +7,9 @@ const Create = () => {
         <input type="text" name="title"></input>
         <label>Recipe ingredients:</label>
         <div>
-          <form>
-            <input type="text" name="ingredient"></input>
-            <input type="submit" value="add"></input>
-            <p>Current ingredients:</p>
-          </form>
+          <input type="text" name="ingredient"></input>
+          <input type="submit" value="add"></input>
+          <p>Current ingredients:</p>
         </div>
         <label>Recipe method:</label>
         <input type="textarea" name="steps"></input>

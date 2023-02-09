@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const RecipeList = styled.div`
@@ -31,7 +32,7 @@ export const Steps = styled.div`
   margin: 10px;
 `;
 
-export const Button = styled.a`
+export const Button = styled(Link)`
   background-color: #dfdfdf;
   padding: 5px 15px;
   border-radius: 2px;
