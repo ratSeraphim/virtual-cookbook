@@ -16,12 +16,21 @@ const RecipeCard = () => {
         {error && <div>{error}</div>}
         {isPending && <div>Loading...</div>}
 
-        {recipe && (
+        {!isPending && recipe && (
           <>
             <S.Title>{recipe.title}</S.Title>
             <S.Requirements>
               Takes {recipe.time} minutes to cook
-              <S.Ingredients>{recipe.ingredients}</S.Ingredients>
+              <div>
+                {recipe &&
+                  recipe.ingredients.map((ing, i) =>
+                    i === recipe.ingredients.length - 1 ? (
+                      <S.Ingredients key={ing}> {ing}. </S.Ingredients>
+                    ) : (
+                      <S.Ingredients key={ing}> {ing}, </S.Ingredients>
+                    )
+                  )}
+              </div>
             </S.Requirements>
             <S.Steps>{recipe.steps}</S.Steps>
           </>
@@ -36,3 +45,23 @@ export default RecipeCard;
 /* {recipe.ingredients.map((ing) => (
                   <li key={ing}>{ing}</li>
                 ))} */
+
+/* return (
+    <div>
+      <S.RecipeCard>
+        {error && <div>{error}</div>}
+        {isPending && <div>Loading...</div>}
+
+        {recipe && (
+          <>
+            <S.Title>{recipe.title}</S.Title>
+            <S.Requirements>
+              Takes {recipe.time} minutes to cook
+              <S.Ingredients>{recipe.ingredients}</S.Ingredients>
+            </S.Requirements>
+            <S.Steps>{recipe.steps}</S.Steps>
+          </>
+        )}
+      </S.RecipeCard>
+    </div>
+  ); */

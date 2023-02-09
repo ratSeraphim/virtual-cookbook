@@ -18,7 +18,8 @@ export const Requirements = styled.div`
   padding: 15px;
 `;
 
-export const Ingredients = styled.h3`
+export const Ingredients = styled.ul`
+  display: inline;
   color: #aaa;
 `;
 
