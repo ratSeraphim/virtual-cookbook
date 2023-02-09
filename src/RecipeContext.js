@@ -1,49 +1,36 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
+import useFetch from "./components/hooks/useFetch";
 
 export const RecipeContext = createContext();
 
 const recipeReducer = (state, action) => {
   switch (action.type) {
     case "SET_LIST":
-      return { ...state, list: action.payload };
+      return { ...state, fetch: action.payload };
     default:
       return state;
   }
 };
 
-const RecipeContextProvider = (props) => {
-  const [state, dispatch] = useReducer(recipeReducer, { list: [] });
+const RecipeContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(recipeReducer, { fetch: [] });
 
-  const setList = (listData) => {
-    dispatch({ type: "SET_LIST", payload: listData });
-  };
+  const { data, isPending, error } = useFetch("http://localhost:3001/recipes");
 
-  const [selectedRecipes, setSelectedRecipes] = useState([
-    {
-      title: "Greek Salad",
-      time: "35 minutes to make",
-      steps:
-        "1. Pre-heat the oven to 200C 2. Place the carrot leek and tofu in a large bowl.",
-      id: 1,
-    },
-    {
-      title: "Greek Beasst",
-      time: "38 minutes to make",
-      steps: "1. Pre-f 200C 2. Place the carrot leek and tofu in a large bowl.",
-      id: 2,
-    },
-  ]);
+  useEffect(() => {
+    dispatch({ type: "SET_LIST", payload: { data, isPending, error } });
+  }, [data, error, isPending]);
 
-  const addRecipe = (title, steps) => {
+  /*const addRecipe = (title, steps) => {
     setSelectedRecipes([
       ...selectedRecipes,
       { title: title, steps: steps, id: crypto.randomUUID() },
     ]);
-  };
+  };*/
 
   return (
-    <RecipeContext.Provider value={{ selectedRecipes, addRecipe }}>
-      {props.children}
+    <RecipeContext.Provider value={{ ...state, dispatch }}>
+      {children}
     </RecipeContext.Provider>
   );
 };

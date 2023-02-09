@@ -2,18 +2,26 @@
   "recipes": [
     {
       "title": "Veggie Stew",
-      "time": "45 minutes to make",
-      "ingredients": {
-        "1": "1 Carrot",
-        "2": "1 Leek",
-        "3": "200g Tofu",
-        "4": "300ml Veg Stock"
-      },
+      "time": "45",
+      "ingredients": ["1 Carrot", "1 Leek", "200g Tofu", "300ml Veg Stock"],
       "steps": "1. Pre-heat the oven to 200C 2. Place the carrot leek and tofu in a large bowl."
     },
     {
       "title": "Greek Salad",
-      "time": "35 minutes to make",
+      "time": "35",
+      "ingredients": ["1 Carrot", "1 Leek", "200g Tofu", "300ml Veg Stock"],
+      "steps": "1. Pre-heat the oven to 200C 2. Place the carrot leek and tofu in a large bowl."
+    },
+    {
+      "title": "Caesar Salad",
+      "time": "29",
+      "ingredients": ["1 Carrot", "1 Leek", "200g Tofu", "300ml Veg Stock"],
+      "steps": "1. Pre-heat the oven to 200C 2. Place the carrot leek and tofu in a large bowl."
+    },
+    {
+      "title": "Chocolate cake",
+      "time": "29",
+      "ingredients": ["1 Carrot", "1 Leek", "200g Tofu", "300ml Veg Stock"],
       "steps": "1. Pre-heat the oven to 200C 2. Place the carrot leek and tofu in a large bowl."
     }
   ]
