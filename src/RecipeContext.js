@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import useFetch from "./components/hooks/useFetch";
 
 export const RecipeContext = createContext();

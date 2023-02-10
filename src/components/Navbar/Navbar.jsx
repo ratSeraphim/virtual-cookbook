@@ -1,6 +1,6 @@
 import * as S from "./style";
-import React, { useContext } from "react";
-import { RecipeContext } from "../../RecipeContext";
+import React from "react";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar = () => {
       <S.Title>Cook Book</S.Title>
       <div>
         Search:
-        <S.Search type="text"></S.Search>
+        <SearchBar />
         <S.Link href="/create">create recipe</S.Link>
       </div>
     </S.Navbar>

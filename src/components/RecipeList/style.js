@@ -32,6 +32,12 @@ export const Steps = styled.div`
   margin: 10px;
 `;
 
+export const Search = styled.div`
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+`;
+
 export const Button = styled(Link)`
   background-color: #dfdfdf;
   padding: 5px 15px;
