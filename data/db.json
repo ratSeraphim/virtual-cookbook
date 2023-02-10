@@ -39,6 +39,20 @@
       "ingredients": ["1 Chocolate bar", "200g flour", "2 egg", "100ml milk"],
       "steps": "1. Pre-heat the oven to 200C 2. Make the cake.",
       "id": "4"
+    },
+    {
+      "title": "pizza",
+      "time": "90",
+      "ingredients": ["cheese", "ketchup", "pepperoni", "dough"],
+      "steps": "make pizza base, spread ketchup over it, sprinkle cheese and pepperoni per own tastes",
+      "id": "7aaa3c51-f0b0-40b9-b099-4708a4b231a4"
+    },
+    {
+      "title": "e",
+      "time": "67",
+      "ingredients": ["e", "a", "v", "n"],
+      "steps": "ad",
+      "id": "44f6c516-e8a6-4303-9ed3-767ac2df20fb"
     }
   ]
 }

@@ -21,13 +21,6 @@ const RecipeContextProvider = ({ children }) => {
     dispatch({ type: "SET_LIST", payload: { data, isPending, error } });
   }, [data, error, isPending]);
 
-  /*const addRecipe = (title, steps) => {
-    setSelectedRecipes([
-      ...selectedRecipes,
-      { title: title, steps: steps, id: crypto.randomUUID() },
-    ]);
-  };*/
-
   return (
     <RecipeContext.Provider value={{ ...state, dispatch }}>
       {children}
