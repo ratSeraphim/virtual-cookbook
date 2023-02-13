@@ -5,6 +5,7 @@ import * as S from "./style";
 const Create = () => {
   const navigate = useNavigate();
   const [ingredient, setIngredient] = useState("");
+  const [status, setStatus] = useState("");
   const [recipe, setRecipe] = useState({
     title: "",
     time: "",
@@ -37,14 +38,26 @@ const Create = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    fetch("http://localhost:3001/recipes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(recipe),
-    }).then(() => {
-      navigate("/");
-    });
+    if (
+      recipe.title &&
+      recipe.ingredients.length > 0 &&
+      recipe.steps &&
+      recipe.time
+    ) {
+      setStatus("Submitting...");
+      fetch("http://localhost:3001/recipes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(recipe),
+      }).then(() => {
+        setTimeout(() => {
+          navigate("/");
+          navigate(0);
+        }, 1500);
+      });
+    } else {
+      setStatus("Please fill out all of the fields!");
+    }
   };
 
   return (
@@ -94,6 +107,7 @@ const Create = () => {
         ></S.TextInput>
         <S.SubmitButton type="submit" value="submit"></S.SubmitButton>
       </S.MyForm>
+      <div>{status}</div>
     </S.CreatePage>
   );
 };

@@ -3,7 +3,12 @@
     {
       "title": "Veggie Stew",
       "time": "45",
-      "ingredients": ["1 Carrot", "1 Leek", "200g Tofu", "300ml Veg Stock"],
+      "ingredients": [
+        "1 Carrot",
+        "1 Leek",
+        "200g Tofu",
+        "300ml Veg Stock"
+      ],
       "steps": "1. Pre-heat the oven to 200C/3C/gas 5. Place the carrot, leek and tofu in a large bowl. Add the stock and mix well. 2. Add the rest of ingredients and mix well. 3. Place the mixture in a large bowl and cover with a lid. 4. Place the lid on the oven and cook for 40 minutes. 5. Serve with a slaw of your choice",
       "id": "1"
     },
@@ -36,23 +41,35 @@
     {
       "title": "Chocolate cake",
       "time": "120",
-      "ingredients": ["1 Chocolate bar", "200g flour", "2 egg", "100ml milk"],
+      "ingredients": [
+        "1 Chocolate bar",
+        "200g flour",
+        "2 egg",
+        "100ml milk"
+      ],
       "steps": "1. Pre-heat the oven to 200C 2. Make the cake.",
       "id": "4"
     },
     {
       "title": "pizza",
       "time": "90",
-      "ingredients": ["cheese", "ketchup", "pepperoni", "dough"],
+      "ingredients": [
+        "cheese",
+        "ketchup",
+        "pepperoni",
+        "dough"
+      ],
       "steps": "make pizza base, spread ketchup over it, sprinkle cheese and pepperoni per own tastes",
       "id": "7aaa3c51-f0b0-40b9-b099-4708a4b231a4"
     },
     {
-      "title": "e",
-      "time": "67",
-      "ingredients": ["e", "a", "v", "n"],
-      "steps": "ad",
-      "id": "44f6c516-e8a6-4303-9ed3-767ac2df20fb"
+      "title": "aetgfsdhdfhfdhd",
+      "time": "7777777777776",
+      "ingredients": [
+        "fd"
+      ],
+      "steps": "make pizza base, spread ketchup over it, sprinkle cheese and pepperoni per own tastes",
+      "id": "0aec46e8-9d31-42d6-b310-b6b6675a9ab6"
     }
   ]
 }

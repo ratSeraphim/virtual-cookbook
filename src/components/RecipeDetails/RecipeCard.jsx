@@ -9,7 +9,6 @@ const RecipeCard = () => {
     error,
     isPending,
   } = useFetch("http://localhost:3001/recipes/" + id);
-  //need to fix ingredient display
   return (
     <div>
       <S.RecipeCard>
@@ -25,9 +24,9 @@ const RecipeCard = () => {
                 {recipe &&
                   recipe.ingredients.map((ing, i) =>
                     i === recipe.ingredients.length - 1 ? (
-                      <S.Ingredients key={ing}> {ing}. </S.Ingredients>
+                      <S.Ingredients key={i}> {ing}. </S.Ingredients>
                     ) : (
-                      <S.Ingredients key={ing}> {ing}, </S.Ingredients>
+                      <S.Ingredients key={i}> {ing}, </S.Ingredients>
                     )
                   )}
               </div>
@@ -41,27 +40,3 @@ const RecipeCard = () => {
 };
 
 export default RecipeCard;
-
-/* {recipe.ingredients.map((ing) => (
-                  <li key={ing}>{ing}</li>
-                ))} */
-
-/* return (
-    <div>
-      <S.RecipeCard>
-        {error && <div>{error}</div>}
-        {isPending && <div>Loading...</div>}
-
-        {recipe && (
-          <>
-            <S.Title>{recipe.title}</S.Title>
-            <S.Requirements>
-              Takes {recipe.time} minutes to cook
-              <S.Ingredients>{recipe.ingredients}</S.Ingredients>
-            </S.Requirements>
-            <S.Steps>{recipe.steps}</S.Steps>
-          </>
-        )}
-      </S.RecipeCard>
-    </div>
-  ); */

@@ -13,9 +13,7 @@ const SearchContextProvider = (props) => {
   };
 
   return (
-    <SearchContext.Provider
-      value={{ query: query, searchHandler, searchHandler }}
-    >
+    <SearchContext.Provider value={{ query: query, searchHandler }}>
       {props.children}
     </SearchContext.Provider>
   );
