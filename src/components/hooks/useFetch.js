@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
-  const [data, setData] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,9 +16,9 @@ const useFetch = (url) => {
           }
           return response.json();
         })
-        .then((data) => {
+        .then((recipes) => {
           setIsPending(false);
-          setData(data);
+          setRecipes(recipes);
           setError(null);
         })
         .catch((err) => {
@@ -34,7 +34,7 @@ const useFetch = (url) => {
     return () => abortCont.abort();
   }, [url]);
 
-  return { data, isPending, error };
+  return { recipes, isPending, error };
 };
 
 export default useFetch;

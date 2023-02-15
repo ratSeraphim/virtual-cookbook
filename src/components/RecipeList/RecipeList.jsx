@@ -1,16 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import * as S from "./style";
-import { useData } from "../hooks/useData";
-import { SearchContext } from "../../SearchContext";
+import { useSelector } from "react-redux";
 
 const RecipeList = () => {
-  const searchContext = useContext(SearchContext);
-  const { fetch } = useData();
+  const { data, searchInput } = useSelector((state) => state.recipes);
+  const recipes = data.recipes;
 
   let filteredRecipes;
-  if (fetch.data) {
-    filteredRecipes = fetch.data.filter((recipe) => {
-      if (recipe.title.toLowerCase().includes(searchContext.query)) {
+  if (recipes) {
+    filteredRecipes = recipes.filter((recipe) => {
+      if (recipe.title.toLowerCase().includes(searchInput)) {
         return recipe;
       }
       return null;
@@ -19,9 +18,7 @@ const RecipeList = () => {
 
   return (
     <>
-      {searchContext.query && (
-        <S.Search>Recipes including {searchContext.query} </S.Search>
-      )}
+      {searchInput && <S.Search>Recipes including {searchInput} </S.Search>}
       <S.RecipeList>
         {filteredRecipes.map((recipe, i) => {
           return (

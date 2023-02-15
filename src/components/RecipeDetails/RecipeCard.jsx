@@ -4,26 +4,24 @@ import * as S from "./style";
 
 const RecipeCard = () => {
   const { id } = useParams();
-  const {
-    data: recipe,
-    error,
-    isPending,
-  } = useFetch("http://localhost:3001/recipes/" + id);
+  const { recipes, error, isPending } = useFetch(
+    "http://localhost:3001/recipes/" + id
+  );
   return (
     <div>
       <S.RecipeCard>
         {error && <div>{error}</div>}
         {isPending && <div>Loading...</div>}
 
-        {!isPending && recipe && (
+        {!isPending && recipes && (
           <>
-            <S.Title>{recipe.title}</S.Title>
+            <S.Title>{recipes.title}</S.Title>
             <S.Requirements>
-              Takes {recipe.time} minutes to cook
+              Takes {recipes.time} minutes to cook
               <div>
-                {recipe &&
-                  recipe.ingredients.map((ing, i) =>
-                    i === recipe.ingredients.length - 1 ? (
+                {recipes &&
+                  recipes.ingredients.map((ing, i) =>
+                    i === recipes.ingredients.length - 1 ? (
                       <S.Ingredients key={i}> {ing}. </S.Ingredients>
                     ) : (
                       <S.Ingredients key={i}> {ing}, </S.Ingredients>
@@ -31,7 +29,7 @@ const RecipeCard = () => {
                   )}
               </div>
             </S.Requirements>
-            <S.Steps>{recipe.steps}</S.Steps>
+            <S.Steps>{recipes.steps}</S.Steps>
           </>
         )}
       </S.RecipeCard>

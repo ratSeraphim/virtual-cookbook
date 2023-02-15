@@ -1,16 +1,18 @@
-import { useData } from "../hooks/useData";
 import RecipeList from "../RecipeList/RecipeList";
 
-const Home = () => {
-  const { fetch } = useData();
+import { useSelector } from "react-redux";
 
-  const { data, isPending, error } = fetch;
+const Home = () => {
+  const { data } = useSelector((state) => state.recipes);
+
+  const { recipes, isPending, error } = data;
+
   return (
     <>
       {isPending && <div>Loading...</div>}
       {error && <div>{error}</div>}
 
-      {data && <RecipeList />}
+      {recipes && <RecipeList />}
     </>
   );
 };

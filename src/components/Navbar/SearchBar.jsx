@@ -1,14 +1,15 @@
 import * as S from "./style";
-import React, { useContext, useEffect, useState } from "react";
-import { SearchContext } from "../../SearchContext";
+import React, { useEffect, useState } from "react";
+import { updateSearch } from "../../redux/Recipes";
+import { useDispatch } from "react-redux";
 
-const SearchBar = (props) => {
+const SearchBar = () => {
+  const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
-  const searchContext = useContext(SearchContext);
 
   useEffect(() => {
-    searchContext.searchHandler(searchQuery);
-  });
+    dispatch(updateSearch(searchQuery));
+  }, [searchQuery]);
 
   return (
     <>

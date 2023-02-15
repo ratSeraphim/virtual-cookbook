@@ -70,6 +70,15 @@
       ],
       "steps": "make pizza base, spread ketchup over it, sprinkle cheese and pepperoni per own tastes",
       "id": "0aec46e8-9d31-42d6-b310-b6b6675a9ab6"
+    },
+    {
+      "title": "zazazaza",
+      "time": "1",
+      "ingredients": [
+        "weed"
+      ],
+      "steps": "one week without the za",
+      "id": "b226b691-cb8d-4500-8156-6009dfdba605"
     }
   ]
 }
