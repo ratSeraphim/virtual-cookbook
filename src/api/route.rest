@@ -15,8 +15,8 @@ Content-Type: application/json
 {
     "name": "Amazing Recipe",
     "time": 40,
-    "recipeSteps": "It takes one to know one",
-    "recipeIngredient": ["how will this work??", "ingredient1", "ingredient2"]
+    "steps": "It takes one to know one",
+    "ingredients": ["how will this work??", "ingredient1", "ingredient2"]
 }
 
 

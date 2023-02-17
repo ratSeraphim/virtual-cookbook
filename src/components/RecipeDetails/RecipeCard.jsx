@@ -12,7 +12,7 @@ const RecipeCard = () => {
   let selectedRecipe;
   if (recipes) {
     selectedRecipe = recipes.find((recipe) => {
-      return recipe.id === id;
+      return recipe._id === id;
     });
   }
 
@@ -24,7 +24,7 @@ const RecipeCard = () => {
 
         {!isPending && selectedRecipe && (
           <>
-            <S.Title>{selectedRecipe.title}</S.Title>
+            <S.Title>{selectedRecipe.name}</S.Title>
             <S.Requirements>
               Takes {selectedRecipe.time} minutes to cook
               <div>

@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "api": "file:./api/",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongoose": "^6.9.2",
     "react": "^18.2.0",
@@ -21,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "devStart": "nodemon ./api/server.js",
+    "devStart": "nodemon ./src/api/server.js",
     "startdb": "json-server --watch ./data/db.json --port 3001"
   },
   "eslintConfig": {

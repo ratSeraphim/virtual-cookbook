@@ -7,7 +7,7 @@ const Create = () => {
   const [ingredient, setIngredient] = useState("");
   const [status, setStatus] = useState("");
   const [recipe, setRecipe] = useState({
-    title: "",
+    name: "",
     time: "",
     ingredients: [],
     steps: "",
@@ -39,7 +39,7 @@ const Create = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (
-      recipe.title &&
+      recipe.name &&
       recipe.ingredients.length > 0 &&
       recipe.steps &&
       recipe.time
@@ -67,8 +67,8 @@ const Create = () => {
         <S.Label>Recipe title:</S.Label>
         <S.TextInput
           type="text"
-          name="title"
-          value={recipe.title}
+          name="name"
+          value={recipe.name}
           onChange={formInputChange}
         ></S.TextInput>
         <S.Label>Recipe ingredients:</S.Label>
