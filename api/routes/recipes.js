@@ -11,6 +11,16 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+/*export function getAllRecipes() {
+  router.get("/", async (req, res) => {
+    try {
+      const recipes = await Recipe.find();
+      res.json(recipes);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+}*/
 
 //Getting one
 router.get("/:id", getRecipe, (req, res) => {
@@ -22,8 +32,8 @@ router.post("/", async (req, res) => {
   const recipe = new Recipe({
     name: req.body.name,
     time: req.body.time,
-    recipeSteps: req.body.recipeSteps,
-    recipeIngredient: req.body.recipeIngredient,
+    steps: req.body.steps,
+    ingredients: req.body.ingredients,
   });
 
   try {

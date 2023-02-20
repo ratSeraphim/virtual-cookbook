@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "devStart": "nodemon ./src/api/server.js",
+    "devStart": "nodemon ./api/server.js --port 3001",
     "startdb": "json-server --watch ./data/db.json --port 3001"
   },
   "eslintConfig": {
